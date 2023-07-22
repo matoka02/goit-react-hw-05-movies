@@ -8,6 +8,11 @@ const SearchForm = () => {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
+  // useEffect(() => {
+  //   API.searchMovies(input).then(ret => setMovies(ret));
+  // }, [input]);
+  // return { movies };
+
   const handleSubmit = evt => {
     setSearchParams({ query: evt.target[0].value });
     evt.preventDefault();
