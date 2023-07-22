@@ -10,7 +10,7 @@ const getTrending = async () => {
   });
 };
 
-const searchMovie = async inputValue => {
+const searchMovies = async inputValue => {
   const resp = await axios.get(
     `/search/movie${API_KEY}&query=${inputValue}&language=en-US&page=1`);
   return resp.data.results.map(({ id, title }) => {
@@ -32,4 +32,4 @@ const getMovieCredits = async moviesId => {
   });
 };
 
-export {getTrending, searchMovie, getMovieDetails, getMovieCredits};
+export {getTrending, searchMovies, getMovieDetails, getMovieCredits};
