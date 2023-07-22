@@ -41,7 +41,7 @@ const MovieDetailsPage = () => {
       <h4>Genres</h4>
       <p>
         {movieDetails.genres
-          ? movieDetails.genres.map(genre => genre.name).join('')
+          ? movieDetails.genres.map(genre => genre.name).join('/')
           : ''}
       </p>
       <p>Additional information</p>
