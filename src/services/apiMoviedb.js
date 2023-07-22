@@ -11,8 +11,7 @@ const getTrending = async () => {
 };
 
 const searchMovies = async inputValue => {
-  const resp = await axios.get(
-    `/search/movie${API_KEY}&query=${inputValue}&language=en-US&page=1`);
+  const resp = await axios.get(`/search/movie${API_KEY}&query=${inputValue}&language=en-US&page=1`);
   return resp.data.results.map(({ id, title }) => {
     return { id, title };
   });
@@ -24,12 +23,17 @@ const getMovieDetails = async movieId => {
 };
 
 const getMovieCredits = async moviesId => {
-  const resp = await axios.get(
-    `/movie/${moviesId}/credits${API_KEY}&language=en-US`);
-
+  const resp = await axios.get(`/movie/${moviesId}/credits${API_KEY}&language=en-US`);
   return resp.data.cast.map(({ name, character, profile_path, id }) => {
     return { name, character, profile_path, id };
   });
 };
 
-export {getTrending, searchMovies, getMovieDetails, getMovieCredits};
+const getMoviesReviews = async moviesId => {
+  const resp = await axios.get(`/movie/${moviesId}/reviews${API_KEY}&language=en-US&page=1`);
+  return resp.data.results.map(({ author, content, id }) => {
+    return { author, content, id };
+  });
+};
+
+export {getTrending, searchMovies, getMovieDetails, getMovieCredits, getMoviesReviews};
