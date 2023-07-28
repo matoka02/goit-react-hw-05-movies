@@ -26,7 +26,7 @@
     color: #000000;
     font-weight: 500;
 
-    &:active{
+    /* &::active{
         color: #BE3455;
-    }
+    } */
 }

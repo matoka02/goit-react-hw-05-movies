@@ -13,7 +13,8 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   const location = useLocation();
-  const backLink = location.state?.from ?? '/';
+  // console.log(location.state.from.search);
+  const backLink = location.state?.from ?? `/movies/${movieId}`;
 
   return (
     <div>
