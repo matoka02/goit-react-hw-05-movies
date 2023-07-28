@@ -33,17 +33,22 @@ const MovieDetailsPage = () => {
         alt={movieDetails.original_title}
       />
       <p>
-        User Score: {' '}
+        User Score:{' '}
         {movieDetails.vote_average
           ? Math.fround(movieDetails.vote_average * 10).toFixed(0)
           : ''}
       </p>
-      <h4>Genres</h4>
-      <p>
-        {movieDetails.genres
-          ? movieDetails.genres.map(genre => genre.name).join('/')
-          : ''}
-      </p>
+      {movieDetails?.length > 0 && (
+        <>
+          <h4>Genres</h4>
+          <p>
+            {movieDetails.genres
+              ? movieDetails.genres.map(genre => genre.name).join('/')
+              : ''}
+          </p>
+        </>
+      )}
+
       <p>Additional information</p>
       <ul>
         <li>
