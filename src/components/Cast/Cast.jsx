@@ -13,6 +13,9 @@ const Cast = () => {
 
   return (
     <div>
+      {movieCredits?.length === 0 && (
+        <p>We don't have information about the cast.</p>
+      )}
       <ul>
         {movieCredits.map(cast => {
           return (
