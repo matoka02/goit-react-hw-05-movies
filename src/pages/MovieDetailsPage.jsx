@@ -13,12 +13,13 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   const location = useLocation();
+  console.log(location);
   // console.log(location.state.from.search);
   const backLink = location.state?.from ?? `/movies/${movieId}`;
 
   return (
     <div>
-      <Link to={backLink}>
+      <Link to={backLink} relative='path'>
         {' '}
         <button type="button">Go back</button>
       </Link>
