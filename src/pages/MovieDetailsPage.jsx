@@ -15,7 +15,8 @@ const MovieDetailsPage = () => {
   const location = useLocation();
   console.log(location);
   // console.log(location.state.from.search);
-  const backLink = location.state?.from ?? `/movies/${movieId}`;
+  // const backLink = location.state?.from ?? `/movies/${movieId}`;
+  const backLink = location.state?.from ?? `/`;
 
   return (
     <div>
@@ -54,10 +55,10 @@ const MovieDetailsPage = () => {
       <p>Additional information</p>
       <ul>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link to="cast" state={location.state}>Cast</Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link to="reviews" state={location.state}>Reviews</Link>
         </li>
       </ul>
       <Outlet />
